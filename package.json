@@ -9,7 +9,8 @@
     "watch": "tsc -w",
     "test": "jest",
     "build-api": "cd src && tsc",
-    "cdk": "cdk"
+    "cdk": "cdk",
+    "deploy": "npm run build && cdk deploy"
   },
   "devDependencies": {
     "@aws-cdk/assert": "1.115.0",
@@ -23,6 +24,7 @@
     "typescript": "~3.9.7"
   },
   "dependencies": {
+    "@aws-cdk/aws-apigateway": "^1.116.0",
     "@aws-cdk/aws-lambda": "^1.116.0",
     "@aws-cdk/aws-s3": "^1.116.0",
     "@aws-cdk/core": "1.115.0",
