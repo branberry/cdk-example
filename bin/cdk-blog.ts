@@ -2,8 +2,10 @@
 import 'source-map-support/register';
 import * as cdk from '@aws-cdk/core';
 import { CdkBlogStack } from '../lib/cdk-blog-stack';
+import WebSocketApiStack from '../lib/web-socket-api-stack';
 
 const app = new cdk.App();
+
 new CdkBlogStack(app, 'CdkBlogStack', {
   /* If you don't specify 'env', this stack will be environment-agnostic.
    * Account/Region-dependent features and context lookups will not work,
@@ -19,3 +21,5 @@ new CdkBlogStack(app, 'CdkBlogStack', {
 
   /* For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html */
 });
+
+new WebSocketApiStack(app, 'WebSocketStack', {});
