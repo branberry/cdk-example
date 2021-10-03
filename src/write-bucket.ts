@@ -8,6 +8,7 @@ export const handler = async (event: APIGatewayProxyEvent): Promise<APIGatewayPr
   const s3Client = new S3();
 
   console.log(event);
+
   
   try {
     await s3Client.putObject({

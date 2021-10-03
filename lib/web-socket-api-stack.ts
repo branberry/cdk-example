@@ -14,15 +14,16 @@ export default class WebSocketApiStack extends Stack {
 
       const disconnectFunction = new Function(this, "disconnect-function", {
         code: Code.fromAsset('./dist/src/'),
-        handler: 'connect.handler',
+        handler: 'disconnect.handler',
         runtime: Runtime.NODEJS_14_X,
       });
 
       const defaultFunction = new Function(this, "default-function", {
         code: Code.fromAsset('./dist/src/'),
-        handler: 'connect.handler',
+        handler: 'default.handler',
         runtime: Runtime.NODEJS_14_X,
       });
+
       const webSocketApi = new WebSocketApi(this, 'websocketapi', {
         connectRouteOptions: {integration: new LambdaWebSocketIntegration({ handler: connectFunction })},
         defaultRouteOptions: {integration: new LambdaWebSocketIntegration({ handler: disconnectFunction })},
